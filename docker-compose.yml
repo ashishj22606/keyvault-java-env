@@ -1,0 +1,13 @@
+version: '3'
+services:
+  your-java-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - KEY_VAULT_URL=https://your-keyvault-name.vault.azure.net
+      - AZURE_CLIENT_ID=your-client-id
+      - AZURE_CLIENT_SECRET=your-client-secret
+      - AZURE_TENANT_ID=your-tenant-id
+      - AZURE_SECRET_NAME=your-secret-name
+    command: ["java", "-jar", "your-java-app.jar"]
